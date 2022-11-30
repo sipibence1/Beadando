@@ -5,12 +5,7 @@ from sajatmodul import eredmeny
 
 def lottosorsolas():
     button1["state"] = DISABLED
-    sajatelsoseged.set(sajatszamok1.get())
-    sajatmasodikseged.set(sajatszamok2.get())
-    sajatharmadikseged.set(sajatszamok3.get())
-    sajatnegyedikseged.set(sajatszamok4.get())
-    sajatotodikseged.set(sajatszamok5.get())
-    if (sajatelsoseged.get() == sajatmasodikseged.get() or sajatelsoseged.get() == sajatharmadikseged.get() or sajatelsoseged.get() == sajatnegyedikseged.get() or sajatelsoseged.get() == sajatotodikseged.get() or sajatmasodikseged.get() == sajatharmadikseged.get() or sajatmasodikseged.get() == sajatnegyedikseged.get() or sajatmasodikseged.get() == sajatotodikseged.get() or sajatharmadikseged.get() == sajatnegyedikseged.get() or sajatharmadikseged.get() == sajatotodikseged.get() or sajatnegyedikseged.get() == sajatotodikseged.get() or sajatelsoseged.get() == "" or sajatmasodikseged.get() == "" or sajatharmadikseged.get() == "" or sajatnegyedikseged.get() == "" or sajatotodikseged.get().isdigit() == FALSE or sajatnegyedikseged.get().isdigit() == FALSE or sajatharmadikseged.get().isdigit() == FALSE or sajatmasodikseged.get().isdigit() == FALSE or sajatelsoseged.get().isdigit() == FALSE):
+    if (sajatszamok1.get() == sajatszamok2.get() or sajatszamok1.get() == sajatszamok3.get() or sajatszamok1.get() == sajatszamok4.get() or sajatszamok1.get() == sajatszamok5.get() or sajatszamok2.get() == sajatszamok3.get() or sajatszamok2.get() == sajatszamok4.get() or sajatszamok2.get() == sajatszamok5.get() or sajatszamok3.get() == sajatszamok4.get() or sajatszamok3.get() == sajatszamok5.get() or sajatszamok4.get() == sajatszamok5.get() or sajatszamok1.get() == "" or sajatszamok2.get() == "" or sajatszamok3.get() == "" or sajatszamok4.get() == "" or sajatszamok5.get().isdigit() == FALSE or sajatszamok4.get().isdigit() == FALSE or sajatszamok3.get().isdigit() == FALSE or sajatszamok2.get().isdigit() == FALSE or sajatszamok1.get().isdigit() == FALSE):
         messagebox.showwarning("Hiba!", "Hibás értékek!")
         exit()
     sajatszamok1["state"] = DISABLED
@@ -27,7 +22,7 @@ def lottosorsolas():
         seged4 = random.randint(1, 90);
         seged5 = random.randint(1, 90);
         segedosszes = [seged1, seged2, seged3, seged4, seged5]
-        print(segedosszes)
+        print(f"ideiglenes random generalt szamok:  {segedosszes}")
         if (seged1 == seged2 or seged1 == seged3 or seged1 == seged4 or seged1 == seged5 or seged2 == seged3 or seged2 == seged4 or seged2 == seged5 or seged3 == seged4 or seged3 == seged5 or seged4 == seged5):
             a = TRUE
         else:
@@ -48,32 +43,25 @@ def lottosorsolas():
     frame5.pack(side=TOP)
     label4 = Label(frame5, font=("Arial", 20), width=26, text="A nyertes Lottószámok:")
     label4.pack(side=LEFT)
-    genszamok1 = Entry(frame5, textvariable=genelso, bd=20, insertwidth=1, font=("Arial", 30), justify="center",
-                       width=3, state=DISABLED)
+    genszamok1 = Entry(frame5, textvariable=genelso, bd=20, insertwidth=1, font=("Arial", 30), justify="center", width=3, state=DISABLED)
     genszamok1.pack(side=LEFT)
-    genszamok2 = Entry(frame5, textvariable=genmasodik, bd=20, insertwidth=1, font=("Arial", 30), justify="center",
-                       width=3, state=DISABLED)
+    genszamok2 = Entry(frame5, textvariable=genmasodik, bd=20, insertwidth=1, font=("Arial", 30), justify="center", width=3, state=DISABLED)
     genszamok2.pack(side=LEFT)
-    genszamok3 = Entry(frame5, textvariable=genharmadik, bd=20, insertwidth=1, font=("Arial", 30), justify="center",
-                       width=3, state=DISABLED)
+    genszamok3 = Entry(frame5, textvariable=genharmadik, bd=20, insertwidth=1, font=("Arial", 30), justify="center", width=3, state=DISABLED)
     genszamok3.pack(side=LEFT)
-    genszamok4 = Entry(frame5, textvariable=gennegyedik, bd=20, insertwidth=1, font=("Arial", 30), justify="center",
-                       width=3, state=DISABLED)
+    genszamok4 = Entry(frame5, textvariable=gennegyedik, bd=20, insertwidth=1, font=("Arial", 30), justify="center", width=3, state=DISABLED)
     genszamok4.pack(side=LEFT)
-    genszamok5 = Entry(frame5, textvariable=genotodik, bd=20, insertwidth=1, font=("Arial", 30), justify="center",
-                       width=3, state=DISABLED)
+    genszamok5 = Entry(frame5, textvariable=genotodik, bd=20, insertwidth=1, font=("Arial", 30), justify="center", width=3, state=DISABLED)
     genszamok5.pack(side=LEFT)
 
-    eredmeny(lotto, sajatelsoseged, sajatmasodikseged, sajatharmadikseged, sajatnegyedikseged, sajatotodikseged, genelso, genmasodik, genharmadik, gennegyedik, genotodik)
-
-
+    eredmeny(lotto, sajatszamok1, sajatszamok2, sajatszamok3, sajatszamok4, sajatszamok5, genelso, genmasodik, genharmadik, gennegyedik, genotodik)
 
 # ablak létrehozása és paraméterezése
 lotto = Tk()
 lotto.geometry('1000x400')
 frame = Frame(lotto)
 frame.pack()
-lotto.title("Ötöslottó");
+lotto.title("Ötöslottó")
 
 # lottószámok változói
 genelso = StringVar()
@@ -88,13 +76,6 @@ sajatmasodik = StringVar()
 sajatharmadik = StringVar()
 sajatnegyedik = StringVar()
 sajatotodik = StringVar()
-
-#segedsajat
-sajatelsoseged = StringVar()
-sajatmasodikseged = StringVar()
-sajatharmadikseged = StringVar()
-sajatnegyedikseged = StringVar()
-sajatotodikseged = StringVar()
 
 frame1 = Frame(lotto)
 frame1.pack(side=TOP)

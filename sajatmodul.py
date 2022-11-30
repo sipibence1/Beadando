@@ -1,23 +1,20 @@
 from tkinter import *
 
-def eredmeny(lotto, sajatelsoseged, sajatmasodikseged, sajatharmadikseged, sajatnegyedikseged, sajatotodikseged, genelso, genmasodik, genharmadik, gennegyedik, genotodik):
+def eredmeny(lotto, sajatszamok1, sajatszamok2, sajatszamok3, sajatszamok4, sajatszamok5, genelso, genmasodik, genharmadik, gennegyedik, genotodik):
     frame6 = Frame(lotto)
     frame6.pack(side=TOP)
     label5 = Label(frame6, text="")
     label5.pack(side=LEFT)
 
-    db = int(0)
-    # teszt kiirás
-    print(
-        sajatelsoseged.get() + sajatmasodikseged.get() + sajatharmadikseged.get() + sajatnegyedikseged.get() + sajatotodikseged.get())
-
-    sajatok = [sajatelsoseged.get(), sajatmasodikseged.get(), sajatharmadikseged.get(), sajatnegyedikseged.get(),
-               sajatotodikseged.get()]
+    # tömbbé alakítás
+    sajatok = [sajatszamok1.get(), sajatszamok2.get(), sajatszamok3.get(), sajatszamok4.get(), sajatszamok5.get()]
     generaltak = [genelso.get(), genmasodik.get(), genharmadik.get(), gennegyedik.get(), genotodik.get()]
-    # teszt kiirás
-    print(sajatok)
-    print(generaltak)
 
+    # teszt kiirás
+    print(f"Végleges saját számok: {sajatok}")
+    print(f"Végleges lottószámok: {generaltak}")
+
+    db = int(0)
     for x in sajatok:
         for y in generaltak:
             if x == y:
