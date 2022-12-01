@@ -10,7 +10,7 @@ def eredmeny(lotto, sajatszamok1, sajatszamok2, sajatszamok3, sajatszamok4, saja
     sajatok = [sajatszamok1.get(), sajatszamok2.get(), sajatszamok3.get(), sajatszamok4.get(), sajatszamok5.get()]
     generaltak = [genelso.get(), genmasodik.get(), genharmadik.get(), gennegyedik.get(), genotodik.get()]
 
-    # teszt kiirás
+    # teszt kiírás
     print(f"Végleges saját számok: {sajatok}")
     print(f"Végleges lottószámok: {generaltak}")
 
