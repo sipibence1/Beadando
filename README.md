@@ -7,3 +7,5 @@ Tanult modulok: random, tkinter - függvények(lottosorsolas())
 Bemutatandó modul: statistics - függvény(eredmeny())
 
 Saját modul: sajatmodul - függvények(multimode(), mean(), median())
+
+Indítási fájl - tanultmodul.py
